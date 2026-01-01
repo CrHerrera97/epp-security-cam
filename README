@@ -13,7 +13,7 @@ Utiliza:
 ---
 
 ## 📌 Características principales
-✔ Detección de personas, cascos, gafas y celulares  
+✔ Detección de personas y cascos 
 ✔ Asociación persona–casco por distancia  
 ✔ Alertas cuando alguien excede el tiempo sin casco  
 ✔ Envío de mensajes y fotos por Telegram  
@@ -26,7 +26,7 @@ Utiliza:
 ## ⚙️ Instalación
 
 ### Requisitos
-Python 3.8+
+Python 3.10
 
 ### Dependencias
 ```bash
@@ -49,8 +49,6 @@ Configura antes:
 - `MODEL_PATH`
 - `RTSP_URL`
 - Token y chat de Telegram
-
-Presiona **Q** para cerrar la ventana.
 
 ---
 
@@ -94,13 +92,6 @@ Registro en:
 ```
 deteccion.log
 ```
-
----
-
-## 🛠️ Mejoras sugeridas
-- Detección de chaleco y guantes
-- Dashboard web
-- Mayor optimización para FPS
 
 ---
 
