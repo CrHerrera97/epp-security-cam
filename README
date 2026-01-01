@@ -46,7 +46,7 @@ python main.py
 ```
 
 Configura antes:
-- `MODEL_PATH`
+- `MODEL_PATH`: runs/detect/ppe_yolo11n_180ep/weights/best.pt
 - `RTSP_URL`
 - Token y chat de Telegram
 
