@@ -1,0 +1,108 @@
+# 🛡️ Sistema de Detección de EPP con YOLO + RTSP + Telegram
+
+Este proyecto implementa un **sistema inteligente de monitoreo de seguridad industrial**, que detecta en tiempo real si una persona está usando o no casco (EPP).
+
+Utiliza:
+- **YOLO (Ultralytics)** para detección de objetos
+- **RTSP** para video en vivo desde cámara IP
+- **OpenCV** para procesamiento
+- **Telegram Bot API** para alertas con foto
+- Tracking persistente por ID
+- Lógica avanzada para asociar casco–persona
+
+---
+
+## 📌 Características principales
+✔ Detección de personas, cascos, gafas y celulares  
+✔ Asociación persona–casco por distancia  
+✔ Alertas cuando alguien excede el tiempo sin casco  
+✔ Envío de mensajes y fotos por Telegram  
+✔ Reconexión automática a la cámara  
+✔ Logging completo  
+✔ Soporte GPU (CUDA)
+
+---
+
+## ⚙️ Instalación
+
+### Requisitos
+Python 3.8+
+
+### Dependencias
+```bash
+pip install ultralytics opencv-python torch requests
+```
+
+Para GPU:
+```bash
+pip install torch --extra-index-url https://download.pytorch.org/whl/cu121
+```
+
+---
+
+## 🚀 Ejecución
+```bash
+python main.py
+```
+
+Configura antes:
+- `MODEL_PATH`
+- `RTSP_URL`
+- Token y chat de Telegram
+
+Presiona **Q** para cerrar la ventana.
+
+---
+
+## 🧠 Lógica del sistema
+
+### 1. Conexión a cámara  
+Con reconexión automática.
+
+### 2. Detección + tracking  
+YOLO detecta personas y cascos.  
+Cada persona recibe un ID único.
+
+### 3. Asociación persona–casco  
+Se calcula distancia entre:
+```
+head_center ↔ casco_center
+```
+
+### 4. Alertas  
+Si una persona está sin casco por más de `TIME_BEFORE_ALERT`:
+- Se toma foto
+- Se envía por Telegram
+- Se registra en logs
+- Respeta `ALERT_COOLDOWN`
+
+---
+
+## 🖼️ Ejemplo de alerta
+```
+ALERTA EPP: Personal sin casco
+ID: 12
+Tiempo sin casco: 5s
+Hora: 2025-01-01 10:32:12
+Área: Planta principal Bavaria Monteria picking 1
+```
+
+---
+
+## 📝 Logging
+Registro en:
+```
+deteccion.log
+```
+
+---
+
+## 🛠️ Mejoras sugeridas
+- Detección de chaleco y guantes
+- Dashboard web
+- Mayor optimización para FPS
+
+---
+
+## 👨‍💻 Autor
+Cristian Herrera
