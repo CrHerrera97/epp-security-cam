@@ -17,8 +17,8 @@ ALERT_COOLDOWN = 60
 AREA = "Planta principal Bavaria Monteria picking 1"
 
 # --- Telegram ---
-TELEGRAM_TOKEN = "7960172584:AAFot_eGtO5xk2fIKGtw0UW3bw5_1xqJRyE"
-CHAT_ID = "8152029002"
+TELEGRAM_TOKEN = ""
+CHAT_ID = ""
 
 # --- Logging ---
 logging.basicConfig(filename="deteccion.log", level=logging.INFO,
